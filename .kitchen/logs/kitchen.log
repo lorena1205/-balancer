@@ -1,0 +1,82 @@
+I, [2023-04-19T22:27:40.411975 #43364]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.5.0)
+I, [2023-04-19T22:27:40.723677 #43364]  INFO -- Kitchen: -----> Cleaning up any prior instances of <default-Ubuntu>
+I, [2023-04-19T22:27:40.725288 #43364]  INFO -- Kitchen: -----> Destroying <default-Ubuntu>...
+I, [2023-04-19T22:27:40.728761 #43364]  INFO -- Kitchen: -----> Testing <default-Ubuntu>
+I, [2023-04-19T22:27:40.729556 #43364]  INFO -- Kitchen: -----> Creating <default-Ubuntu>...
+I, [2023-04-19T22:27:41.169823 #43364]  INFO -- Kitchen: #1 [internal] load .dockerignore
+I, [2023-04-19T22:27:41.171691 #43364]  INFO -- Kitchen: #1 transferring context: 2B 0.0s done
+I, [2023-04-19T22:27:41.173948 #43364]  INFO -- Kitchen: #1 DONE 0.0s
+I, [2023-04-19T22:27:41.178533 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:41.182364 #43364]  INFO -- Kitchen: #2 [internal] load build definition from Dockerfile-kitchen20230419-43364-fb9kg
+I, [2023-04-19T22:27:41.198987 #43364]  INFO -- Kitchen: #2 transferring dockerfile: 1.52kB 0.0s done
+I, [2023-04-19T22:27:41.285652 #43364]  INFO -- Kitchen: #2 DONE 0.1s
+I, [2023-04-19T22:27:41.285704 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:41.285722 #43364]  INFO -- Kitchen: #3 [internal] load metadata for docker.io/library/ubuntu:20.04
+I, [2023-04-19T22:27:57.526775 #43364]  INFO -- Kitchen: #3 DONE 16.2s
+I, [2023-04-19T22:27:57.532863 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.532914 #43364]  INFO -- Kitchen: #4 [ 1/15] FROM docker.io/library/ubuntu:20.04@sha256:db8bf6f4fb351aa7a26e27ba2686cf35a6a409f65603e59d4c203e58387dc6b3
+I, [2023-04-19T22:27:57.532927 #43364]  INFO -- Kitchen: #4 DONE 0.0s
+I, [2023-04-19T22:27:57.532940 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.532961 #43364]  INFO -- Kitchen: #5 [ 4/15] RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2023-04-19T22:27:57.532973 #43364]  INFO -- Kitchen: #5 CACHED
+I, [2023-04-19T22:27:57.532989 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533001 #43364]  INFO -- Kitchen: #6 [11/15] RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2023-04-19T22:27:57.533025 #43364]  INFO -- Kitchen: #6 CACHED
+I, [2023-04-19T22:27:57.533034 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533083 #43364]  INFO -- Kitchen: #7 [ 6/15] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+I, [2023-04-19T22:27:57.533123 #43364]  INFO -- Kitchen: #7 CACHED
+I, [2023-04-19T22:27:57.533136 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533170 #43364]  INFO -- Kitchen: #8 [13/15] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2023-04-19T22:27:57.533181 #43364]  INFO -- Kitchen: #8 CACHED
+I, [2023-04-19T22:27:57.533190 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533198 #43364]  INFO -- Kitchen: #9 [ 8/15] RUN mkdir -p /home/kitchen/.ssh
+I, [2023-04-19T22:27:57.533209 #43364]  INFO -- Kitchen: #9 CACHED
+I, [2023-04-19T22:27:57.533217 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533282 #43364]  INFO -- Kitchen: #10 [10/15] RUN chmod 0700 /home/kitchen/.ssh
+I, [2023-04-19T22:27:57.533294 #43364]  INFO -- Kitchen: #10 CACHED
+I, [2023-04-19T22:27:57.533302 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533314 #43364]  INFO -- Kitchen: #11 [ 2/15] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+I, [2023-04-19T22:27:57.533323 #43364]  INFO -- Kitchen: #11 CACHED
+I, [2023-04-19T22:27:57.533330 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533342 #43364]  INFO -- Kitchen: #12 [ 5/15] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+I, [2023-04-19T22:27:57.533351 #43364]  INFO -- Kitchen: #12 CACHED
+I, [2023-04-19T22:27:57.533358 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533369 #43364]  INFO -- Kitchen: #13 [14/15] RUN mkdir -p /run/sshd
+I, [2023-04-19T22:27:57.533378 #43364]  INFO -- Kitchen: #13 CACHED
+I, [2023-04-19T22:27:57.533396 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533405 #43364]  INFO -- Kitchen: #14 [12/15] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2023-04-19T22:27:57.533445 #43364]  INFO -- Kitchen: #14 CACHED
+I, [2023-04-19T22:27:57.533459 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533469 #43364]  INFO -- Kitchen: #15 [ 9/15] RUN chown -R kitchen /home/kitchen/.ssh
+I, [2023-04-19T22:27:57.533556 #43364]  INFO -- Kitchen: #15 CACHED
+I, [2023-04-19T22:27:57.533574 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533584 #43364]  INFO -- Kitchen: #16 [ 7/15] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+I, [2023-04-19T22:27:57.533593 #43364]  INFO -- Kitchen: #16 CACHED
+I, [2023-04-19T22:27:57.533607 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533616 #43364]  INFO -- Kitchen: #17 [ 3/15] RUN apt-get update
+I, [2023-04-19T22:27:57.533624 #43364]  INFO -- Kitchen: #17 CACHED
+I, [2023-04-19T22:27:57.533632 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533643 #43364]  INFO -- Kitchen: #18 [15/15] RUN echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1/RNF37LjjtWtwNVx+p339vzy9UvOSP9t1ZBJqVxEW7TzXBDiLWc36TAVpymVVVFbuAY4QM3KXvpJVb8WTOeibHcDbNrPPd8ApxdIXNZ+YPjLkFR+w/XingrsEn8xb7pTNgp/ro6zx7NOc2/mgZPtNgiHMqAP7zjNdHWbVWPcJkxG+kuRaNCZ0EL9CNsJeUVc4LUnFoTKR3vgmhRCfFUbHiuCD5ONRzl+ki3WjDPvNbYNY8GNKmocLJRnBRW0nW6yaNkIJvgKP4Xk+A+VaS8Ae1/4GdTYrCDVixqbdj0WmcNXjpvbzYKy4Pubqq9G+blRwgzuTi3bPTKX2G7wVS8/ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2023-04-19T22:27:57.533652 #43364]  INFO -- Kitchen: #18 CACHED
+I, [2023-04-19T22:27:57.533680 #43364]  INFO -- Kitchen: 
+I, [2023-04-19T22:27:57.533687 #43364]  INFO -- Kitchen: #19 exporting to image
+I, [2023-04-19T22:27:57.533695 #43364]  INFO -- Kitchen: #19 exporting layers done
+I, [2023-04-19T22:27:57.533704 #43364]  INFO -- Kitchen: #19 writing image sha256:1e7539f86cbdbd400649e175fd58b38d54e6c6c43cc501a6e95a23d75ceae4e1 done
+I, [2023-04-19T22:27:57.533712 #43364]  INFO -- Kitchen: #19 DONE 0.0s
+I, [2023-04-19T22:27:57.796623 #43364]  INFO -- Kitchen: d21c9a9073e7faa95db57fc341953bbd0abdf1036c84945572865c129581c023
+I, [2023-04-19T22:27:58.713119 #43364]  INFO -- Kitchen: 0.0.0.0:32773
+I, [2023-04-19T22:27:58.713180 #43364]  INFO -- Kitchen: [::]:32773
+I, [2023-04-19T22:27:58.810386 #43364]  INFO -- Kitchen: -----> Converging <default-Ubuntu>...
+I, [2023-04-19T22:31:05.886896 #43364]  INFO -- Kitchen: -----> Setting up <default-Ubuntu>...
+I, [2023-04-19T22:31:05.890776 #43364]  INFO -- Kitchen: -----> Verifying <default-Ubuntu>...
+I, [2023-04-19T22:31:14.246549 #43364]  INFO -- Kitchen: -----> Destroying <default-Ubuntu>...
+I, [2023-04-19T22:31:14.246947 #43364]  INFO -- Kitchen: [Docker] Destroying Docker container d21c9a9073e7faa95db57fc341953bbd0abdf1036c84945572865c129581c023
+I, [2023-04-19T22:31:14.405219 #43364]  INFO -- Kitchen: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+I, [2023-04-19T22:31:14.405292 #43364]  INFO -- Kitchen: root                43530               43505               0                   22:27               ?                   00:00:00            sshd: /usr/sbin/sshd -D -o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes -o UsePrivilegeSeparation=no -o PidFile=/tmp/sshd.pid [listener] 0 of 10-100 startups
+I, [2023-04-19T22:31:14.405315 #43364]  INFO -- Kitchen: root                43577               43530               0                   22:27               ?                   00:00:00            sshd: kitchen [priv]
+I, [2023-04-19T22:31:14.405334 #43364]  INFO -- Kitchen: vagrant             43579               43577               0                   22:27               ?                   00:00:00            sshd: kitchen@notty
+I, [2023-04-19T22:31:14.405349 #43364]  INFO -- Kitchen: root                46560               43530               0                   22:31               ?                   00:00:00            nginx: master process /usr/sbin/nginx
+I, [2023-04-19T22:31:14.405366 #43364]  INFO -- Kitchen: www-data            46562               46560               0                   22:31               ?                   00:00:00            nginx: worker process
+I, [2023-04-19T22:31:15.134189 #43364]  INFO -- Kitchen: d21c9a9073e7faa95db57fc341953bbd0abdf1036c84945572865c129581c023
+I, [2023-04-19T22:31:15.909526 #43364]  INFO -- Kitchen: d21c9a9073e7faa95db57fc341953bbd0abdf1036c84945572865c129581c023
+I, [2023-04-19T22:31:15.929399 #43364]  INFO -- Kitchen: -----> Test Kitchen is finished. (3m35.52s)
